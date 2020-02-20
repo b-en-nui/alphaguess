@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alphaguesser</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <big>Enter a word</big><br>
+  <input type="text" id="guessInput" name="name" requiredminlength="1" maxlength="32" size="10">
+  <button onclick="tryWord()">Press me!</button><br><br>
+
+  <table id="guessTable">
+    <thead><th>Guesses:</th></thead> //TODO - left align
+    <tr></tr>
+  </table>
+  <script>
+    
+  function tryWord(number){
+    var table = document.getElementById("guessTable");
+    var input = document.getElementById("guessInput");
+    var row = table.insertRow(1); //TODO - insert alphabetically
+    var cell1 = row.insertCell(0);
+    cell1.innerHTML = input.value;
+
+    console.log("wrong, sweatie");
+  }
+
+
+  </script>
+</body>
+</html>
