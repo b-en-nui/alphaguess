@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Alphaguesser</title>
-  <meta charset="UTF-8"/>
-</head>
-<body>
-  <big>Enter a word</big><br>
-  <input type="text" id="guessInput" name="name" requiredminlength="1" maxlength="32" size="10">
-  <button onclick="tryWord()">Press me!</button><br><br>
-
-  <table id="guessTable">
-    <thead><th>Guesses:</th></thead> //TODO - left align
-    <tr></tr>
-  </table>
-  <script>
-    
-  function tryWord(number){
-    var table = document.getElementById("guessTable");
-    var input = document.getElementById("guessInput");
-    var row = table.insertRow(1); //TODO - insert alphabetically
-    var cell1 = row.insertCell(0);
-    cell1.innerHTML = input.value;
-
-    console.log("wrong, sweatie");
-  }
+  <head>
+    <title>Alphaguesser</title>
+    <meta charset="UTF-8"/>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <div id="app">
+    <body>
+      <h3>I'm thinking of a word. Triangulate the answer using your knowledge of the alphabet!</h3>
+      <h5>Guesses: {{counter}}</h5><br><br>
 
 
-  </script>
-</body>
-</html>
+      <table id="beforeTable">
+        <tr></tr>
+      </table>
+      <input type="text" id="guessInput" name="name" requiredminlength="1" maxlength="32" size="10">
+      <button id="inputButton" v-on:click="buttonClick">Guess word</button><br><br>
+  
+      <table id="afterTable">
+        <tr></tr>
+      </table>
+    </body>
+  </div>
+  
+  <script src="script.js"></script>
+
+  </html>
