@@ -9,18 +9,13 @@
   <div id="app">
     <body>
       <h3>I'm thinking of a word. Triangulate the answer using your knowledge of the alphabet!</h3>
-      <h5>Guesses: {{counter}}</h5><br><br>
+      <h5 id="sub">Guesses: {{counter}}</h5><br>
 
 
-      <table id="beforeTable">
-        <tr></tr>
-      </table>
+      <div id="beforeTable"></div>
       <input type="text" id="guessInput" name="name" requiredminlength="1" maxlength="32" size="10">
-      <button id="inputButton" v-on:click="buttonClick">Guess word</button><br><br>
-  
-      <table id="afterTable">
-        <tr></tr>
-      </table>
+      <button id="inputButton" v-on:click="buttonClick">Guess word</button><br>
+      <div id="afterTable"></div>
     </body>
   </div>
   
